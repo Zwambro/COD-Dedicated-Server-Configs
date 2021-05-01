@@ -1,0 +1,570 @@
+// BO3 Dedicated Server Template
+// Created by: LeonLionHeart & Chase (https://chasehall.net)
+// Help from: C45P3R~FYANB~
+
+
+// SERVER SETTINGS
+settings
+
+// GAMETYPES
+//Team Deathmatch
+gametype tdm
+script tdm
+rule gts maxAllocation 10
+rule gts hardcoreMode 0
+rule gts timeLimit 20 
+rule gts friendlyfiretype 0
+rule gts scoreLimit 150
+rule gts playerHealthRegenTime 1
+rule gts playerMaxHealth 90
+rule gts playerRespawnDelay 0
+rule gts allowKillcam 1
+rule gts allowBattleChatter 1
+rule gts teamKillPunishCount 0
+
+//Hardcore Team Deathmatch
+gametype hc_tdm
+script tdm
+rule gts maxAllocation 10
+rule gts scoreLimit 150
+rule gts hardcoreMode 1
+rule gts friendlyfiretype 1
+rule gts playerHealthRegenTime 1
+rule gts playerMaxHealth 30
+rule gts playerRespawnDelay 0
+rule gts allowKillcam 1
+rule gts allowBattleChatter	0
+rule gts teamKillPunishCount 3
+
+//Free For All
+gametype dm
+script dm
+rule gts maxAllocation 10
+rule gts timeLimit 20
+rule gts scoreLimit 75
+rule gts hardcoreMode 0
+rule gts friendlyfiretype 0
+rule gts playerHealthRegenTime 1
+rule gts playerMaxHealth 90
+rule gts playerRespawnDelay 0
+rule gts allowKillcam 1
+rule gts allowBattleChatter 1
+rule gts teamKillPunishCount 0
+
+//Hardcore Free For All
+gametype hc_dm
+script dm
+rule gts maxAllocation 10
+rule gts scoreLimit 75
+rule gts hardcoreMode 1
+rule gts friendlyfiretype 1
+rule gts playerHealthRegenTime 1
+rule gts playerMaxHealth 30
+rule gts playerRespawnDelay 0
+rule gts allowKillcam 1
+rule gts allowBattleChatter	0
+rule gts teamKillPunishCount 3
+
+//Search and Destroy
+gametype sd
+script sd
+rule gts maxAllocation 10
+rule gts hardcoreMode 0
+rule gts friendlyfiretype 0
+rule gts playerHealthRegenTime 1
+rule gts playerMaxHealth 100
+rule gts playerRespawnDelay 0
+rule gts allowKillcam 1
+rule gts allowBattleChatter 1
+rule gts teamKillPunishCount 0
+
+//Hardcore Search and Destroy
+gametype hc_sd
+script sd
+rule gts maxAllocation 10
+rule gts hardcoreMode 1
+rule gts friendlyfiretype 1
+rule gts playerHealthRegenTime 1
+rule gts playerMaxHealth 30
+rule gts playerRespawnDelay 0
+rule gts allowKillcam 1
+rule gts allowBattleChatter	0
+rule gts teamKillPunishCount 0
+
+//Capture the Flag
+gametype ctf
+script ctf
+rule gts maxAllocation 10
+rule gts hardcoreMode 0
+rule gts friendlyfiretype 0
+rule gts playerHealthRegenTime 1
+rule gts playerMaxHealth 100
+rule gts playerRespawnDelay 0
+rule gts allowKillcam 1
+rule gts allowBattleChatter 1
+rule gts teamKillPunishCount 0
+
+//Hardcore Capture the Flag
+gametype hc_ctf
+script ctf
+rule gts maxAllocation 10
+rule gts hardcoreMode 1
+rule gts friendlyfiretype 1
+rule gts playerHealthRegenTime 1
+rule gts playerMaxHealth 30
+rule gts playerRespawnDelay 0
+rule gts allowKillcam 1
+rule gts allowBattleChatter	0
+rule gts teamKillPunishCount 0
+
+//Domination
+gametype dom
+script dom
+rule gts maxAllocation 10
+rule gts timeLimit 20
+rule gts hardcoreMode 0
+rule gts friendlyfiretype 0
+rule gts playerHealthRegenTime 1
+rule gts playerMaxHealth 90
+rule gts playerRespawnDelay 0
+rule gts allowKillcam 1
+rule gts allowBattleChatter 1
+rule gts teamKillPunishCount 0
+
+//Hardcore Domination
+gametype hc_dom
+script dom
+rule gts maxAllocation 10
+rule gts timeLimit 20
+rule gts hardcoreMode 1
+rule gts friendlyfiretype 1
+rule gts playerHealthRegenTime 1
+rule gts playerMaxHealth 30
+rule gts playerRespawnDelay 0
+rule gts allowKillcam 1
+rule gts allowBattleChatter	0
+rule gts teamKillPunishCount 0
+
+//Hardpoint
+gametype koth
+script koth
+rule gts maxAllocation 10
+rule gts timeLimit 20
+rule gts hardcoreMode 0
+rule gts friendlyfiretype 0
+rule gts playerHealthRegenTime 1
+rule gts playerMaxHealth 90
+rule gts playerRespawnDelay 0
+rule gts allowKillcam 1
+rule gts allowBattleChatter 1
+rule gts teamKillPunishCount 0
+
+//Hardcore Hardpoint
+gametype hc_koth
+script koth
+rule gts maxAllocation 10
+rule gts hardcoreMode 1
+rule gts friendlyfiretype 1
+rule gts playerHealthRegenTime 1
+rule gts playerMaxHealth 30
+rule gts playerRespawnDelay 0
+rule gts allowKillcam 1
+rule gts allowBattleChatter	0
+rule gts teamKillPunishCount 0
+
+//Uplink
+gametype ball
+script ball
+rule gts maxAllocation 10
+rule gts hardcoreMode 0
+rule gts friendlyfiretype 0
+rule gts playerHealthRegenTime 1
+rule gts playerMaxHealth 100
+rule gts playerRespawnDelay 0
+rule gts allowKillcam 1
+rule gts allowBattleChatter 1
+rule gts teamKillPunishCount 0
+
+//Hardcore Uplink
+gametype hc_ball
+script ball
+rule gts maxAllocation 10
+rule gts hardcoreMode 1
+rule gts friendlyfiretype 1
+rule gts playerHealthRegenTime 1
+rule gts playerMaxHealth 90
+rule gts playerRespawnDelay 0
+rule gts allowKillcam 1
+rule gts allowBattleChatter	0
+rule gts teamKillPunishCount 0
+
+//Kill Confirmed
+gametype conf
+script conf
+rule gts maxAllocation 10
+rule gts hardcoreMode 0
+rule gts friendlyfiretype 0
+rule gts playerHealthRegenTime 1
+rule gts playerMaxHealth 90
+rule gts playerRespawnDelay 0
+rule gts allowKillcam 1
+rule gts allowBattleChatter 1
+rule gts teamKillPunishCount 0
+
+//Hardcore Kill Confirmed
+gametype hc_conf
+script conf
+rule gts maxAllocation 10
+rule gts hardcoreMode 1
+rule gts friendlyfiretype 1
+rule gts playerHealthRegenTime 1
+rule gts playerMaxHealth 30
+rule gts playerRespawnDelay 0
+rule gts allowKillcam 1
+rule gts allowBattleChatter	0
+rule gts teamKillPunishCount 0
+
+//Gun Game
+gametype gun
+script gun
+
+//Hardcore Gun Game
+gametype hc_gun
+script gun
+rule gts hardcoreMode 0
+rule gts playerHealthRegenTime 1
+rule gts playerMaxHealth 90
+rule gts playerRespawnDelay 0
+rule gts allowKillcam 1
+rule gts teamKillPunishCount 0
+rule gts forceRadar 0
+
+//Demolition
+gametype dem
+script dem
+rule gts maxAllocation 10
+rule gts hardcoreMode 0
+rule gts friendlyfiretype 0
+rule gts playerHealthRegenTime 1
+rule gts playerMaxHealth 100
+rule gts playerRespawnDelay 0
+rule gts allowKillcam 1
+rule gts allowBattleChatter 1
+rule gts teamKillPunishCount 0
+
+//Hardcore Demolition
+gametype hc_dem
+script dem
+rule gts maxAllocation 10
+rule gts hardcoreMode 1
+rule gts friendlyfiretype 1
+rule gts playerHealthRegenTime 1
+rule gts playerMaxHealth 30
+rule gts playerRespawnDelay 0
+rule gts allowKillcam 1
+rule gts allowBattleChatter 0
+rule gts teamKillPunishCount 0
+
+//Safegaurd
+gametype escort
+script escort
+rule gts maxAllocation 10
+rule gts hardcoreMode 0
+rule gts friendlyfiretype 0
+rule gts playerHealthRegenTime 1
+rule gts playerMaxHealth 100
+rule gts playerRespawnDelay 0
+rule gts allowKillcam 1
+rule gts allowBattleChatter 1
+rule gts teamKillPunishCount 0
+
+//Hardcore Safegaurd
+gametype hc_escort
+script escort
+rule gts maxAllocation 10
+rule gts hardcoreMode 1
+rule gts friendlyfiretype 1
+rule gts playerHealthRegenTime 1
+rule gts playerMaxHealth 30
+rule gts playerRespawnDelay 0
+rule gts allowKillcam 1
+rule gts allowBattleChatter 0
+rule gts teamKillPunishCount 0
+
+//Fracture
+gametype clean
+script clean
+rule gts maxAllocation 10
+rule gts hardcoreMode 0
+rule gts friendlyfiretype 0
+rule gts playerHealthRegenTime 1
+rule gts playerMaxHealth 100
+rule gts playerRespawnDelay 0
+rule gts allowKillcam 1
+rule gts allowBattleChatter 1
+rule gts teamKillPunishCount 0
+
+//Hardcore Fracture
+gametype hc_clean
+script clean
+rule gts maxAllocation 10
+rule gts hardcoreMode 1
+rule gts friendlyfiretype 1
+rule gts playerHealthRegenTime 1
+rule gts playerMaxHealth 30
+rule gts playerRespawnDelay 0
+rule gts allowKillcam 1
+rule gts allowBattleChatter 0
+rule gts teamKillPunishCount 0
+
+// KNOWN PLAYLISTS CONFIG SETTINGS
+// DNW = Does not work in playlist settings. Rather, works in the gamemode script. i.e script tdm
+// NT  = Not Tested
+//
+//
+// Main Settings
+
+// Time Limit (Minutes)
+// rule gts timeLimit
+
+// Score Limit
+// rule gts scoreLimit
+
+// Score limit per round. (Does not work for most game modes as it tries to override the gamemode script)
+// rule gts roundScoreLimit
+
+// Amount of rounds in a gamemode. (NT)
+// rule gts roundLimit
+
+// Amount of rounds until switch. (NT)
+// rule gts roundSwitch
+
+// Amount of rounds of rounds to win. Example, if 12 rounds you may need 10 to win to shorten the game. (NT)
+// rule gts roundWinLimit
+
+// Automate above command per calculation. (NT)
+// rule gts cumulativeRoundScores
+
+// Game will run in hardcore mode. (DNW)
+// rule gts hardcoreMode
+
+// Enables of disables friendly fire. 0 = Disable | 1 = Enabled (DNW)
+// rule gts friendlyfiretype
+
+// Disables some graphical effects server side. (NT)
+// rule gts disableAmbientFx
+
+
+// The following settings are unknown (NT)
+// rule gts allowprone
+// rule gts allowaimslowdown
+// rule gts disallowprone
+// rule gts disallowaimslowdown
+// rule gts disableweapondrop
+
+
+// Player Settings
+
+// Amount of lives given to each player. (NT)
+// rule gts playerNumLives
+
+// Amount of lives given to the entire team. (NT)
+// rule gts teamNumLives
+
+// Amount of health given to each player. 100 in the default amount. (DNW)
+// rule gts playerMaxHealth
+
+// Enables health regen. 0 = Disable | 1 = Enable (DNW)
+// rule gts playerHealthRegenTime
+
+// Amount of time a player is given to sprint. (NT)
+// rule gts playerSprintTime
+
+
+// Respawn Settings
+
+// Delays per wave. Waves are continuously running.
+// rule gts waveRespawnDelay
+
+// After death per player, how long they have to wait to respawn in seconds. (DNW)
+// rule gts playerRespawnDelay
+
+
+// The following are undorumented, granted you might be able to make sense of them. -Chase
+
+// rule gts playerObjectiveHeldRespawnDelay
+// rule gts playerForceRespawn
+// rule gts playerQueuedRespawn
+// rule gts spawnprotectiontime
+// rule gts spawnsuicidepenalty
+// rule gts spawnteamkilledpenalty
+// rule gts spawntraptriggertime
+// rule gts droppedTagRespawn
+// rule gts incrementalSpawnDelay
+
+// Scoring Settings
+
+// rule gts leaderBonus
+// rule gts deathPointLoss
+// rule gts teamScorePerKill
+// rule gts teamScorePerDeath
+// rule gts teamScorePerHeadshot
+// rule gts teamScorePerKillConfirmed
+// rule gts teamScorePerKillDenied
+// rule gts pointsPerPrimaryKill
+// rule gts pointsPerSecondaryKill
+// rule gts pointsPerPrimaryGrenadeKill
+// rule gts pointsPerMeleeKill
+// rule gts pointsPerWeaponKill
+// rule gts pointsForSurvivalBonus
+// rule gts killEventScoreMultiplier
+// rule gts scoreHeroPowerGainFactor
+// rule gts scoreHeroPowerTimeFactor
+// rule gts scoreResetOnDeath
+
+
+// HUD Settings
+
+// rule gts wagermatchhud
+
+
+// Audio Settings
+
+// Enables or disables the announcer. 0 = disabled | 1 = endabled. (NT)
+// rule gts allowAnnouncer
+
+// rule gts allowBattleChatter
+
+
+// Killstreaks
+
+// rule gts loadoutKillstreaksEnabled
+// rule gts crateCaptureTime
+
+// Allow killstreaks to contribute to game score. (NT)
+// rule gts killstreaksGiveGameScore
+
+
+// Vehicles
+// rule gts vehiclesEnabled
+// rule gts vehiclesTimed
+
+
+// Perks
+// rule gts perksEnabled
+
+
+// Game
+// rule gts allowKillcam
+// rule gts allowFinalKillcam
+// rule gts onlyHeadshots
+
+// Forces permanent UAV (NT)
+// rule gts forceRadar
+
+// rule gts allowhitmarkers
+// rule gts bulletDamageScalar
+// rule gts disableTacInsert
+// rule gts disableAttachments
+// rule gts disableContracts
+// rule gts allowMapScripting
+// rule gts prematchperiod
+// rule gts preroundperiod
+
+
+// UI
+// rule gts useEmblemInsteadOfFactionIcon
+
+
+// Gamemode Flags
+// rule gts captureTime
+// rule gts bombTimer
+// rule gts plantTime
+// rule gts defuseTime
+// rule gts extraTime
+// rule gts OvertimetimeLimit
+// rule gts destroyTime
+// rule gts idleFlagResetT
+
+
+// MAPS
+
+// Stock Maps
+// mp_apartments (Evac)
+// mp_biodome (Aquarium)
+// mp_chinatown (Exodus)
+// mp_ethiopia (Hunted)
+// mp_havoc (Havoc)
+// mp_infection (Infection)
+// mp_metro (Metro)
+// mp_redwood (Redwood)
+// mp_sector (Combine)
+// mp_spire (Breach)
+// mp_stronghold (Stronghold)
+// mp_veiled (Fringe) 
+// mp_nuketown_x (Nuke3town)
+
+// DLC1
+// mp_crucible (Gauntlet)
+// mp_rise (Rise)
+// mp_skyjacked (SkyJacked)
+// mp_waterpark (Splash)
+
+// DLC2
+// mp_aerospace (Spire)
+// mp_banzai (Verge)
+// mp_conduit (Rift)
+// mp_kung_fu (Knockout)
+
+// DLC3
+// mp_arena (Rumble)
+// mp_cryogen (Cryogen)
+// mp_rome (Empire)
+// mp_shrine (Berserk)
+
+// DLC4
+// mp_city (Rupture)
+// mp_miniature (Micro)
+// mp_ruins (Citadel) 
+// mp_western (outlaw)
+
+
+// GAMEMODES
+
+// tdm (Team Deathmatch)
+// dm (Free For All)
+// sd (Search and Destroy)
+// ctf (Capture the Flag)
+// dom (Domination)
+// koth (Hardpoint)
+// ball (Uplink)
+// conf (Kill Confirmed)
+// gun (Gun Game)
+// dem (Demolition)
+// escort (Safegaurd)
+// clean (Fracture)
+
+
+// PLAYLISTS  
+// Format: workshopID,tdm OR mp_apartments,dom
+playlist 1
+rule party_minplayers 1
+mp_nuketown_x,tdm
+mp_redwood,tdm
+mp_biodome,tdm
+
+playlist 2
+rule party_minplayers 1
+mp_nuketown_x,tdm
+mp_redwood,tdm
+mp_biodome,tdm
+
+playlist 3
+rule party_minplayers 1
+rule gts timeLimit 20
+mp_nuketown_x,tdm
+mp_redwood,tdm
+mp_biodome,tdm
+
+
+// must have a hard return after this line
